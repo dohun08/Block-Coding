@@ -25,6 +25,7 @@ main{
 }
 #car{
     position: absolute;
+    top: 0px;
 }
 #achive{
     position: absolute;
@@ -60,4 +61,13 @@ main{
     border: 1px solid black;
     width: 300px;
     height: 300px;
+}
+#test{
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    margin: 0px;
+    position: absolute;
+    top: 310px;
+    left: 60px;
 }
