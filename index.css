@@ -1,0 +1,73 @@
+main{
+    display: flex;
+    flex-direction: row;
+}
+#ploblemBox{
+    width: 600px;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#ploblem{
+    width: 500px;
+    height: 500px;
+}
+#under{
+    background-color: #FF7979;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+#ploblem div{
+    width: 50px;
+    height: 50px;
+    background-color: #FF7979;
+}
+#ploblem article{
+    width: 50px;
+    height: 50px;
+    background-color: #F3ED68;
+}
+#car{
+    position: absolute;
+    top: 0px;
+}
+#achive{
+    position: absolute;
+    top: 300px;
+}
+#list{
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    margin: 0px 10px;
+}
+
+#under:hover{
+    cursor:move;
+}
+#button{
+    position: absolute;
+    top: 500px;
+    left: 700px;
+}
+#last{
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+}
+#test{
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    margin: 0px;
+    position: absolute;
+    top: 310px;
+    left: 60px;
+}
