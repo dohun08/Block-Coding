@@ -13,6 +13,17 @@ main{
     width: 500px;
     height: 500px;
 }
+#under{
+    background-color: #FF7979;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
 #ploblem div{
     width: 50px;
     height: 50px;
@@ -37,18 +48,7 @@ main{
     height: 300px;
     margin: 0px 10px;
 }
-#under{
-    background-color: #FF7979;
-    width: 200px;
-    height: 30px;
-    border-radius: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 100px;
-}
+
 #under:hover{
     cursor:move;
 }
