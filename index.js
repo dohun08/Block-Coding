@@ -60,16 +60,28 @@ let draggableCopy = null;
             }
         });
 
+var count = 0;
 
 
+var px = 0;
+let isFirstClick = true;
         function play(){
-            if(draggableCopy.parentElement === last){
-                car.style.transition = "0.3s";
-                car.style.top += "50px";
+            const childNodes = last.childNodes;
+            childNodes.forEach(node => {
+                count++;
+            });
+            px = count*50;
+            car.style.transition = "0.3s";
+            if (isFirstClick) {
+                car.style.top =(px-50)+"px";
+                isFirstClick = false; // 상태 변경
+            } else {
+                car.style.top =px+"px";
             }
-            if (carTop === 300) {
-                alert('div3 is at top: 100px');
-            }
+            
+            console.log(count);
+            count = 0;
+            
         }
 
 
