@@ -6,8 +6,6 @@ main{
     width: 600px;
     border: 1px solid black;
     position: relative;
-    display: flex;
-    justify-content: center;
 }
 #ploblem{
     width: 500px;
@@ -24,6 +22,54 @@ main{
     align-items: center;
     position: absolute;
 }
+#right{
+    background-color: #FF7979;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50px;
+    position: absolute;
+}
+#if{
+    background-color: #00C95D;
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    position: absolute;
+}
+#for{
+    background-color: #E6DC00;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 140px;
+    position: absolute;
+}
+#stop{
+    background-color: #000000;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 190px;
+    position: absolute;
+}
 #ploblem div{
     width: 50px;
     height: 50px;
@@ -37,6 +83,7 @@ main{
 #car{
     position: absolute;
     top: 0px;
+    left: 0px;
 }
 #achive{
     position: absolute;
