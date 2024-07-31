@@ -13,6 +13,8 @@ let draggableCopy = null;
 
         // Clone and drag the copy of the original element
         under.addEventListener('mousedown', (event) => {
+            const forOption = draggableCopy4.querySelector('#forOption');
+
             if (event.target.classList.contains('under')) {
                 isDragging = true;
 
@@ -44,8 +46,17 @@ let draggableCopy = null;
 
                     const copyRect = draggableCopy.getBoundingClientRect();
                     const lastRect = last.getBoundingClientRect();
-
-                    if (copyRect.top >= lastRect.top &&
+                    const forOptionRect = forOption.getBoundingClientRect();
+                    if(copyRect.top >= forOptionRect.top &&
+                        copyRect.left >= forOptionRect.left &&
+                        copyRect.bottom <= forOptionRect.bottom &&
+                        copyRect.right <= forOptionRect.right){
+                            forOption.appendChild(draggableCopy);
+                            draggableCopy.style.position = 'relative';
+                            draggableCopy.style.left = '0px';
+                            draggableCopy.style.top = '0px';
+                    }
+                    else if (copyRect.top >= lastRect.top &&
                         copyRect.left >= lastRect.left &&
                         copyRect.bottom <= lastRect.bottom &&
                         copyRect.right <= lastRect.right) {
@@ -71,6 +82,7 @@ let draggableCopy = null;
 let draggableCopy2 = null;
 
 right.addEventListener('mousedown', (event) => {
+    const forOption = draggableCopy4.querySelector('#forOption');
     if (event.target.classList.contains('right')) {
         isDragging2 = true;
 
@@ -102,8 +114,17 @@ right.addEventListener('mousedown', (event) => {
 
             const copyRect = draggableCopy2.getBoundingClientRect();
             const lastRect = last.getBoundingClientRect();
-
-            if (copyRect.top >= lastRect.top &&
+            const forOptionRect = forOption.getBoundingClientRect();
+            if(copyRect.top >= forOptionRect.top &&
+                copyRect.left >= forOptionRect.left &&
+                copyRect.bottom <= forOptionRect.bottom &&
+                copyRect.right <= forOptionRect.right){
+                    forOption.appendChild(draggableCopy2);
+                    draggableCopy2.style.position = 'relative';
+                    draggableCopy2.style.left = '0px';
+                    draggableCopy2.style.top = '0px';
+            }
+            else if (copyRect.top >= lastRect.top &&
                 copyRect.left >= lastRect.left &&
                 copyRect.bottom <= lastRect.bottom &&
                 copyRect.right <= lastRect.right) {
@@ -127,6 +148,7 @@ right.addEventListener('mousedown', (event) => {
 let isDragging3 = false;
 let draggableCopy3 = null;
 iff.addEventListener('mousedown', (event) => {
+    const forOption = draggableCopy4.querySelector('#forOption');
     if (event.target.classList.contains('if')) {
         isDragging3 = true;
 
@@ -158,8 +180,17 @@ iff.addEventListener('mousedown', (event) => {
 
             const copyRect = draggableCopy3.getBoundingClientRect();
             const lastRect = last.getBoundingClientRect();
-
-            if (copyRect.top >= lastRect.top &&
+            const forOptionRect = forOption.getBoundingClientRect();
+            if(copyRect.top >= forOptionRect.top &&
+                copyRect.left >= forOptionRect.left &&
+                copyRect.bottom <= forOptionRect.bottom &&
+                copyRect.right <= forOptionRect.right){
+                    forOption.appendChild(draggableCopy3);
+                    draggableCopy3.style.position = 'relative';
+                    draggableCopy3.style.left = '0px';
+                    draggableCopy3.style.top = '0px';
+            }
+            else if (copyRect.top >= lastRect.top &&
                 copyRect.left >= lastRect.left &&
                 copyRect.bottom <= lastRect.bottom &&
                 copyRect.right <= lastRect.right) {
@@ -184,6 +215,7 @@ iff.addEventListener('mousedown', (event) => {
 let isDragging4 = false;
 let draggableCopy4 = null;
 forr.addEventListener('mousedown', (event) => {
+    const forOption = draggableCopy4.querySelector('#forOption');
     if (event.target.classList.contains('for')) {
         isDragging4 = true;
 
@@ -215,8 +247,17 @@ forr.addEventListener('mousedown', (event) => {
 
             const copyRect = draggableCopy4.getBoundingClientRect();
             const lastRect = last.getBoundingClientRect();
-
-            if (copyRect.top >= lastRect.top &&
+            const forOptionRect = forOption.getBoundingClientRect();
+            if(copyRect.top >= forOptionRect.top &&
+                copyRect.left >= forOptionRect.left &&
+                copyRect.bottom <= forOptionRect.bottom &&
+                copyRect.right <= forOptionRect.right){
+                    forOption.appendChild(draggableCopy4);
+                    draggableCopy4.style.position = 'relative';
+                    draggableCopy4.style.left = '0px';
+                    draggableCopy4.style.top = '0px';
+            }
+            else if (copyRect.top >= lastRect.top &&
                 copyRect.left >= lastRect.left &&
                 copyRect.bottom <= lastRect.bottom &&
                 copyRect.right <= lastRect.right) {
@@ -239,6 +280,7 @@ let isDragging5 = false;
 let draggableCopy5 = null;
 
 stop.addEventListener('mousedown', (event) => {
+    const forOption = draggableCopy4.querySelector('#forOption');
     if (event.target.classList.contains('stop')) {
         isDragging5 = true;
 
@@ -270,8 +312,18 @@ stop.addEventListener('mousedown', (event) => {
 
             const copyRect = draggableCopy5.getBoundingClientRect();
             const lastRect = last.getBoundingClientRect();
-
-            if (copyRect.top >= lastRect.top &&
+            const forOptionRect = forOption.getBoundingClientRect();
+            
+            if(copyRect.top >= forOptionRect.top &&
+                copyRect.left >= forOptionRect.left &&
+                copyRect.bottom <= forOptionRect.bottom &&
+                copyRect.right <= forOptionRect.right){
+                    forOption.appendChild(draggableCopy5);
+                    draggableCopy5.style.position = 'relative';
+                    draggableCopy5.style.left = '0px';
+                    draggableCopy5.style.top = '0px';
+            }
+            else if (copyRect.top >= lastRect.top &&
                 copyRect.left >= lastRect.left &&
                 copyRect.bottom <= lastRect.bottom &&
                 copyRect.right <= lastRect.right) {
@@ -280,7 +332,8 @@ stop.addEventListener('mousedown', (event) => {
                 draggableCopy5.style.position = 'relative';
                 draggableCopy5.style.left = '0px';
                 draggableCopy5.style.top = '0px';
-            } else {
+            } 
+            else {
                 document.body.removeChild(draggableCopy5);
             }
         }
@@ -296,45 +349,18 @@ var count_r = 0;
 
 var px = 0;
 var px2 = 0;
-const child = last.children;
+const children = last.children;
+px = count_u*50;
+car.style.top =px+"px";
+px2 = count_r*50;
+car.style.left =px2+"px";
+car.style.top =px+"px";
+count_u++;
+count_r++;
         function play(){
+            const forOption = draggableCopy4.querySelector('#forOption');
             car.style.transition = "0.3s";
-            const childNodes = last.childNodes;
-            childNodes.forEach(node => {
-                if(node.id == "under") count_u++;
-                if(node.id == "right") count_r++;
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                    console.log("1");
-                    if(node.id == "for"){
-                        console.log("1");
-                        const input = draggableCopy4.querySelector('input[type="text"]');
-                        const num = parseInt(input.value, 10);
-                        for(let j=1; j<=num; j++){
-                            console.log("2");
-                            for(let i=1; `child[${j}].id` !="stop"; i++){
-                                console.log("3");
-                                if(`child[${i}].id` == "under"){
-                                    px = count_u*50;
-                                    car.style.top =px+"px";
-                                }
-                                else if(`child[${i}].id` == "right"){
-                                    px2 = count_r*50;
-                                    car.style.left =px2+"px";
-                                }
-                            }
-                        }
-                    }
-                    else if(node.id == "under"){
-                        px = count_u*50;
-                        car.style.top =px+"px";
-                    } 
-                    else if(node.id == "right"){
-                        px2 = count_r*50;
-                        car.style.left =px2+"px";
-                    }
-                }
-                
-            });
+            console.log(forOption.lastChild.id);
             count_u = 0;
             count_r = 0;
         }

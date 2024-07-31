@@ -48,8 +48,8 @@ main{
 }
 #for{
     background-color: #E6DC00;
-    width: 200px;
-    height: 30px;
+    width: 300px;
+    height: 50px;
     border-radius: 10px;
     color: white;
     display: flex;
@@ -57,6 +57,14 @@ main{
     align-items: center;
     top: 140px;
     position: absolute;
+    font-size: 12px;
+}
+#forOption{
+    border: 1px solid rgb(183, 255, 0);
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    bottom: -100px;
 }
 #stop{
     background-color: #000000;
@@ -67,7 +75,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 190px;
+    top: 400px;
     position: absolute;
 }
 #ploblem div{
@@ -92,7 +100,7 @@ main{
 #list{
     border: 1px solid black;
     width: 300px;
-    height: 300px;
+    height: 450px;
     margin: 0px 10px;
 }
 
@@ -106,7 +114,7 @@ main{
 }
 #last{
     border: 1px solid black;
-    width: 300px;
+    width: 400px;
     height: 300px;
 }
 #test{
