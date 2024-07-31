@@ -47,6 +47,7 @@ let draggableCopy = null;
                     const copyRect = draggableCopy.getBoundingClientRect();
                     const lastRect = last.getBoundingClientRect();
                     const forOptionRect = forOption.getBoundingClientRect();
+
                     if(copyRect.top >= forOptionRect.top &&
                         copyRect.left >= forOptionRect.left &&
                         copyRect.bottom <= forOptionRect.bottom &&
@@ -83,6 +84,7 @@ let draggableCopy2 = null;
 
 right.addEventListener('mousedown', (event) => {
     const forOption = draggableCopy4.querySelector('#forOption');
+
     if (event.target.classList.contains('right')) {
         isDragging2 = true;
 
@@ -149,6 +151,7 @@ let isDragging3 = false;
 let draggableCopy3 = null;
 iff.addEventListener('mousedown', (event) => {
     const forOption = draggableCopy4.querySelector('#forOption');
+
     if (event.target.classList.contains('if')) {
         isDragging3 = true;
 
@@ -215,7 +218,7 @@ iff.addEventListener('mousedown', (event) => {
 let isDragging4 = false;
 let draggableCopy4 = null;
 forr.addEventListener('mousedown', (event) => {
-    const forOption = draggableCopy4.querySelector('#forOption');
+    
     if (event.target.classList.contains('for')) {
         isDragging4 = true;
 
@@ -247,17 +250,9 @@ forr.addEventListener('mousedown', (event) => {
 
             const copyRect = draggableCopy4.getBoundingClientRect();
             const lastRect = last.getBoundingClientRect();
-            const forOptionRect = forOption.getBoundingClientRect();
-            if(copyRect.top >= forOptionRect.top &&
-                copyRect.left >= forOptionRect.left &&
-                copyRect.bottom <= forOptionRect.bottom &&
-                copyRect.right <= forOptionRect.right){
-                    forOption.appendChild(draggableCopy4);
-                    draggableCopy4.style.position = 'relative';
-                    draggableCopy4.style.left = '0px';
-                    draggableCopy4.style.top = '0px';
-            }
-            else if (copyRect.top >= lastRect.top &&
+
+            
+            if (copyRect.top >= lastRect.top &&
                 copyRect.left >= lastRect.left &&
                 copyRect.bottom <= lastRect.bottom &&
                 copyRect.right <= lastRect.right) {
