@@ -13,7 +13,6 @@ let draggableCopy = null;
 
         // Clone and drag the copy of the original element
         under.addEventListener('mousedown', (event) => {
-            const forOption = draggableCopy4.querySelector('#forOption');
 
             if (event.target.classList.contains('under')) {
                 isDragging = true;
@@ -43,21 +42,32 @@ let draggableCopy = null;
                     isDragging = false;
                     document.removeEventListener('mousemove', onMouseMove);
                     document.removeEventListener('mouseup', onMouseUp);
-
+                    
                     const copyRect = draggableCopy.getBoundingClientRect();
                     const lastRect = last.getBoundingClientRect();
-                    const forOptionRect = forOption.getBoundingClientRect();
-
-                    if(copyRect.top >= forOptionRect.top &&
-                        copyRect.left >= forOptionRect.left &&
-                        copyRect.bottom <= forOptionRect.bottom &&
-                        copyRect.right <= forOptionRect.right){
-                            forOption.appendChild(draggableCopy);
-                            draggableCopy.style.position = 'relative';
-                            draggableCopy.style.left = '0px';
-                            draggableCopy.style.top = '0px';
+                    for (let i = 0; i < last.children.length; i++) {
+                        if(last.children[i].id=="for"){
+                            const forOption = draggableCopy4.querySelector('#forOption');
+                            const forOptionRect = forOption.getBoundingClientRect();
+                            if(copyRect.top >= forOptionRect.top &&
+                                copyRect.left >= forOptionRect.left &&
+                                copyRect.bottom <= forOptionRect.bottom &&
+                                copyRect.right <= forOptionRect.right){
+                                    forOption.appendChild(draggableCopy);
+                                    draggableCopy.style.position = 'relative';
+                                    draggableCopy.style.left = '0px';
+                                    draggableCopy.style.top = '0px';
+                            }
+                            else {
+                                document.body.removeChild(draggableCopy);
+                            }
+                            document.addEventListener('mousemove', onMouseMove);
+                            document.addEventListener('mouseup', onMouseUp);
+                            return 0;
+                        }
                     }
-                    else if (copyRect.top >= lastRect.top &&
+                    
+                    if (copyRect.top >= lastRect.top &&
                         copyRect.left >= lastRect.left &&
                         copyRect.bottom <= lastRect.bottom &&
                         copyRect.right <= lastRect.right) {
@@ -339,25 +349,54 @@ stop.addEventListener('mousedown', (event) => {
 });
 
 
-var count_u = 0;
-var count_r = 0;
+
 
 var px = 0;
 var px2 = 0;
 const children = last.children;
-px = count_u*50;
-car.style.top =px+"px";
-px2 = count_r*50;
-car.style.left =px2+"px";
-car.style.top =px+"px";
-count_u++;
-count_r++;
         function play(){
-            const forOption = draggableCopy4.querySelector('#forOption');
             car.style.transition = "0.3s";
-            console.log(forOption.lastChild.id);
-            count_u = 0;
-            count_r = 0;
+            let count_u = 0;
+            let count_r = 0;
+            for (let i = 0; i < last.children.length; i++) {
+                const forOption = draggableCopy4.querySelector('#forOption');
+                const input = draggableCopy4.querySelector('input[type="text"]');
+                if(last.children[i].id =="for"){
+                    for(let num=1; num<=input.value; num++){
+                        for(let j=0; j<forOption.children.length; j++){
+                            if(forOption.children[j].id =="under"){
+                        
+                                count_u+=1;
+                                console.log(count_u);
+                                px = count_u*50;
+                                car.style.top =px+"px";
+                                
+                            }
+                            else if(forOption.children[j].id =="right"){
+                                count_r++;
+                                px2 = 50*count_r;
+                                car.style.left =px2+"px";
+                                
+                            }
+                        }
+                    }
+                    
+                }
+                if(last.children[i].id =="under"){
+                    
+                    count_u+=1;
+                    console.log(count_u);
+                    px = count_u*50;
+                    car.style.top =px+"px";
+                    
+                }
+                else if(last.children[i].id =="right"){
+                    count_r++;
+                    px2 = 50*count_r;
+                    car.style.left =px2+"px";
+                    
+                }
+            }
         }
 
 
@@ -373,7 +412,7 @@ count_r++;
 function chect(){
     const carTop = parseInt(window.getComputedStyle(car).top, 10);
     const carLeft = parseInt(window.getComputedStyle(car).left, 10);
-    if(carTop == 300 & carLeft == 50){
+    if(carTop == 300 & carLeft == 0){
         alert("도착했습니다!");
     }
     else{

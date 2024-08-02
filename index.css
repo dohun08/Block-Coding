@@ -126,3 +126,8 @@ main{
     top: 310px;
     left: 60px;
 }
+footer div{
+    display: flex;
+    justify-content: center;
+    
+}
