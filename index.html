@@ -12,12 +12,12 @@
         <section id="ploblemBox">
             <div id="ploblem">
                 <img src="img/자동차.png" width="50px" id="car" alt="자동차">
-                <div></div>
-                <article></article>
-                <div></div>
-                <article></article>
-                <div></div>
-                <article></article>
+                <div id="" class="red"></div>
+                <article class="yellow"></article>
+                <div id="cc" class="red"></div>
+                <article class="yellow"></article>
+                <div class="red"></div>
+                <article class="yellow"></article>
                 <div id="arrive"></div>
                 <img src="img/깃발.png" width="50px" id="achive" alt="깃발">
             </div>
@@ -26,13 +26,15 @@
             <div id="under" class="under" draggable="true">밑으로 1칸 가기</div>
             <div id="right" class="right" draggable="true">옆으로 1칸 이동하기</div>
             <div id="if" class="if" draggable="true">
-                만약에<form>
-                    <select>
-                        <option>빨간색 타일이라면</option>
-                        <option>노란색 타일이라면</option>
-                        <option>몇 칸 이동한 후에</option>
+                만약에
+                    <select id="ifSelect">
+                        <option value="1">빨간색 타일이라면</option>
+                        <option value="2">노란색 타일이라면</option>
                     </select>
-                </form>라면
+                라면
+                <div id="ifOption">
+
+                </div>
             </div>
             
                 <div id="for" class="for" draggable="true">
@@ -42,7 +44,6 @@
                     </div>
                 </div>
                 
-            <div id="stop" class="stop" draggable="true">멈추기</div>
         </section>
         <section id="last">
             
